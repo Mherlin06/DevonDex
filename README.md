@@ -2,6 +2,21 @@
 https://github.com/mui/material-ui/tree/master/examples/nextjs の写経
 
 
+## Next.jsのセットアップ
+```
+yarn create-next-app nextjs_materialui
+```
+
+## 必要なライブラリの追加（styled-componentではなくemotionを採用）
+```
+ yarn add @mui/material @emotion/react @emotion/styled
+```
+
+## 画面上に CSS の当たっていないページが一瞬表示されてしまう問題の対策用
+```
+yarn add @emotion/server @emotion/cache
+```
+
 
 # Next.js example
 
