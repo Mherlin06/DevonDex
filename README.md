@@ -4,7 +4,7 @@ https://github.com/mui/material-ui/tree/master/examples/nextjs の写経
 
 ## Next.jsのセットアップ
 ```
-yarn create-next-app nextjs_materialui
+npx create-next-app nextjs_materialui
 ```
 
 ## 必要なライブラリの追加（styled-componentではなくemotionを採用）
