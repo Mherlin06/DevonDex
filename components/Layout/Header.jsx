@@ -10,7 +10,7 @@ const Header = () => {
         <Image src="/umbreon-logo.png" alt="logo" width={200} height={100} />
         <h1>DevonDex</h1>
       </Box>
-      <SearchBar />
+      <SearchBar />     
     </header>
   );
 };
