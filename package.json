@@ -19,6 +19,7 @@
     "axios": "^1.3.2",
     "fs": "^0.0.1-security",
     "next": "latest",
+    "pokedex-promise-v2": "^4.1.0",
     "prop-types": "latest",
     "react": "latest",
     "react-dom": "latest"
