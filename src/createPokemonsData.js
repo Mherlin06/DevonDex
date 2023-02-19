@@ -1,78 +1,107 @@
 import Pokedex from "pokedex-promise-v2";
 const P = new Pokedex();
-import pokedex from "./pokedex";
+import axios from "axios";
 
-const getPokemonList = () => {
-  return P.getPokemonsList()
-    .then((response) => {
-      console.log(response.results);
-    })
-    .catch((error) => {
-      console.log("There was an ERROR: ", error);
-    });
-};
-
-const getfrenchName = (pokemon) => {
-  P.getPokemonSpeciesByName(pokemon)
-    .then((response) => {
-      const frenchName = response.names.find(
-        (name) => name.language.name === "fr"
-      ).name;
-      const id = response.id;
-      console.log(frenchName + " " + id);
-      return { frenchName, id };
-    })
-    .catch((error) => {
-      console.log("There was an ERROR: ", error);
-    });
-};
-
-const getPokemonData = (pokemon) => {
-  return new Promise((resolve, reject) => {
-    const newPokemon = {};
-    P.getPokemonByName(pokemon)
-      .then((response) => {
-        newPokemon.sprite = response.sprites.front_default;
-        newPokemon.types = response.types.map((type) => type.type.name);
-        newPokemon.hp = {
-          base: response.stats[0].base_stat,
-          name: response.stats[0].stat.name,
-        };
-        newPokemon.attack = {
-          base: response.stats[1].base_stat,
-          name: response.stats[1].stat.name,
-        };
-        newPokemon.defense = {
-          base: response.stats[2].base_stat,
-          name: response.stats[2].stat.name,
-        };
-        newPokemon.specialAttack = {
-          base: response.stats[3].base_stat,
-          name: response.stats[3].stat.name,
-        };
-        newPokemon.specialDefense = {
-          base: response.stats[4].base_stat,
-          name: response.stats[4].stat.name,
-        };
-        newPokemon.speed = {
-          base: response.stats[5].base_stat,
-          name: response.stats[5].stat.name,
-        };
-        resolve(newPokemon);
-      })
-      .catch((error) => {
-        console.log("There was an ERROR: ", error);
-        reject(error);
-      });
-  });
-};
-
-const logpokemon = async () => {
-  const pokemon1 = await getPokemonData("gyarados");
-
-  for (const prop in pokemon1) {
-    console.log(`${prop}: ${pokemon1[prop]}`);
+const getPokemonList = async () => {
+  try {
+    const response = await P.getPokemonsList();
+    return response.results;
+  } catch (error) {
+    console.log("There was an ERROR during getPokemonList: ", error);
+    throw error; // re-throw the error so that the calling code can handle it
   }
 };
 
-export { getPokemonList, getfrenchName, getPokemonData, logpokemon };
+const getPokemonData = async (pokemon) => {
+  try {
+    const response = await P.getResource(pokemon.url);
+    return response;
+  } catch (error) {
+    console.log("There was an ERROR during getPokemonData: ", error);
+    throw error; // re-throw the error so that the calling code can handle it
+  }
+};
+
+const getPokedexEntry = async (data) => {
+  try {
+    const response = await axios.get(data.species.url, { timeout: 30000 });
+    const entry = response.data.id;
+    return entry;
+  } catch (error) {
+    console.log("There was an ERROR during getPokedexEntry: ", error);
+    throw error; // re-throw the error so that the calling code can handle it
+  }
+};
+
+const getPokemonFrenchName = async (data) => {
+  try {
+    const response = await axios.get(data.species.url, { timeout: 30000 });
+    return response.data.names.find((name) => name.language.name === "fr").name;
+  } catch (error) {
+    console.log("There was an ERROR during getPokemonFrenchName: ", error);
+    throw error; // re-throw the error so that the calling code can handle it
+  }
+};
+
+const buildPokemon = async (pokemon) => {
+  try {
+    const data = await getPokemonData(pokemon);
+    const name = data.name;
+    const id = data.id;
+    const miniSprite = data.sprites.front_default;
+    const largeSprite = data.sprites.other["official-artwork"].front_default;
+    const types = data.types.map((type) => type.type.name);
+    const abilities = data.abilities.map((ability) => ability.ability.name);
+    const [pokedexEntry, frenchName] = await Promise.all([
+      getPokedexEntry(data),
+      getPokemonFrenchName(data),
+    ]);
+    const stats = {
+      hp: data.stats[0].base_stat,
+      attack: data.stats[1].base_stat,
+      defense: data.stats[2].base_stat,
+      specialAttack: data.stats[3].base_stat,
+      specialDefense: data.stats[4].base_stat,
+      speed: data.stats[5].base_stat,
+    };
+    const finalPokemon = {
+      name,
+      frenchName,
+      id,
+      pokedexEntry,
+      miniSprite,
+      largeSprite,
+      types,
+      abilities,
+      stats,
+    };
+    console.log(finalPokemon);
+    return finalPokemon;
+  } catch (error) {
+    console.log("There was an ERROR during buildPokemon: ", error);
+    throw error; // re-throw the error so that the calling code can handle it
+  }
+};
+
+const buildPokedex = async () => {
+  try {
+    const pokemonList = await getPokemonList();
+    const pokedex = await Promise.all(
+      pokemonList.map((pokemon) => buildPokemon(pokemon))
+    );
+    console.log(pokedex);
+    return pokedex;
+  } catch (error) {
+    console.log("There was an ERROR during buildPokedex: ", error);
+    throw error; // re-throw the error so that the calling code can handle it
+  }
+};
+
+export {
+  getPokemonList,
+  getPokemonData,
+  getPokemonFrenchName,
+  buildPokemon,
+  getPokedexEntry,
+  buildPokedex,
+};
