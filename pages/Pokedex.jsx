@@ -7,6 +7,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import pokedex from "../src/pokedex";
+import TypeIcon from "../components/icons/TypeIcon";
 
 const Pokedex = () => {
   return (
@@ -37,14 +38,24 @@ const Pokedex = () => {
                 {pokemon.pokedexEntry}
               </TableCell>
               <TableCell align="center">{pokemon.sprite}</TableCell>
-              <TableCell align="center">{pokemon.frenchName} <br></br> {pokemon.name}</TableCell>
-              <TableCell align="center">{pokemon.types}</TableCell>
+              <TableCell align="center">
+                {pokemon.frenchName} <br></br> {pokemon.name}
+              </TableCell>
+              <TableCell align="center">
+                {pokemon.types.map((type) => (
+                  <TypeIcon type={type} key={type} />
+                ))}
+              </TableCell>
               <TableCell align="center">{pokemon.abilities}</TableCell>
               <TableCell align="center">{pokemon.stats.hp}</TableCell>
               <TableCell align="center">{pokemon.stats.attack}</TableCell>
               <TableCell align="center">{pokemon.stats.defense}</TableCell>
-              <TableCell align="center">{pokemon.stats.specialAttack}</TableCell>
-              <TableCell align="center">{pokemon.stats.specialDefense}</TableCell>
+              <TableCell align="center">
+                {pokemon.stats.specialAttack}
+              </TableCell>
+              <TableCell align="center">
+                {pokemon.stats.specialDefense}
+              </TableCell>
               <TableCell align="center">{pokemon.stats.speed}</TableCell>
             </TableRow>
           ))}
