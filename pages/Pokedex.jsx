@@ -6,40 +6,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-
-
-function createData(
-  sprite,
-  id,
-  name,
-  type,
-  abilities,
-  hp,
-  attaque,
-  defense,
-  specialAttack,
-  specialDefense,
-  speed
-) {
-  return {
-    sprite,
-    id,
-    name,
-    type,
-    abilities,
-    hp,
-    attaque,
-    defense,
-    specialAttack,
-    specialDefense,
-    speed,
-  };
-}
-
-const pokemons = [
-  createData("Frozen yoghurt", 159, 6.0, 24, 4.0),
-  createData("Frozen yoghurt", 19, 6.0, 24, 4.0),
-];
+import pokedex from "../src/pokedex";
 
 const Pokedex = () => {
   return (
@@ -61,24 +28,24 @@ const Pokedex = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {pokemons.map((pokemon) => (
+          {pokedex.map((pokemon) => (
             <TableRow
               key={pokemon.id}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
               <TableCell component="th" scope="pokemon">
-                {pokemon.id}
+                {pokemon.pokedexEntry}
               </TableCell>
               <TableCell align="center">{pokemon.sprite}</TableCell>
-              <TableCell align="center">{pokemon.name}</TableCell>
-              <TableCell align="center">{pokemon.type}</TableCell>
+              <TableCell align="center">{pokemon.frenchName} <br></br> {pokemon.name}</TableCell>
+              <TableCell align="center">{pokemon.types}</TableCell>
               <TableCell align="center">{pokemon.abilities}</TableCell>
-              <TableCell align="center">{pokemon.hp}</TableCell>
-              <TableCell align="center">{pokemon.attaque}</TableCell>
-              <TableCell align="center">{pokemon.defense}</TableCell>
-              <TableCell align="center">{pokemon.specialAttack}</TableCell>
-              <TableCell align="center">{pokemon.specialDefense}</TableCell>
-              <TableCell align="center">{pokemon.speed}</TableCell>
+              <TableCell align="center">{pokemon.stats.hp}</TableCell>
+              <TableCell align="center">{pokemon.stats.attack}</TableCell>
+              <TableCell align="center">{pokemon.stats.defense}</TableCell>
+              <TableCell align="center">{pokemon.stats.specialAttack}</TableCell>
+              <TableCell align="center">{pokemon.stats.specialDefense}</TableCell>
+              <TableCell align="center">{pokemon.stats.speed}</TableCell>
             </TableRow>
           ))}
         </TableBody>
