@@ -1,5 +1,5 @@
 import Pokedex from "pokedex-promise-v2";
-const P = new Pokedex();
+const P = new Pokedex({ timeout: 30000 });
 import axios from "axios";
 
 const getPokemonList = async () => {
@@ -56,14 +56,12 @@ const buildPokemon = async (pokemon) => {
       getPokedexEntry(data),
       getPokemonFrenchName(data),
     ]);
-    const stats = {
-      hp: data.stats[0].base_stat,
-      attack: data.stats[1].base_stat,
-      defense: data.stats[2].base_stat,
-      specialAttack: data.stats[3].base_stat,
-      specialDefense: data.stats[4].base_stat,
-      speed: data.stats[5].base_stat,
-    };
+    const hp = data.stats[0].base_stat;
+    const attack = data.stats[1].base_stat;
+    const defense = data.stats[2].base_stat;
+    const specialAttack = data.stats[3].base_stat;
+    const specialDefense = data.stats[4].base_stat;
+    const speed = data.stats[5].base_stat;
     const finalPokemon = {
       name,
       frenchName,
@@ -73,9 +71,13 @@ const buildPokemon = async (pokemon) => {
       largeSprite,
       types,
       abilities,
-      stats,
+      hp,
+      attack,
+      defense,
+      specialAttack,
+      specialDefense,
+      speed,
     };
-    console.log(finalPokemon);
     return finalPokemon;
   } catch (error) {
     console.log("There was an ERROR during buildPokemon: ", error);
@@ -97,6 +99,8 @@ const buildPokedex = async () => {
   }
 };
 
+const newPokedex = buildPokedex();
+
 export {
   getPokemonList,
   getPokemonData,
@@ -104,4 +108,5 @@ export {
   buildPokemon,
   getPokedexEntry,
   buildPokedex,
+  newPokedex,
 };

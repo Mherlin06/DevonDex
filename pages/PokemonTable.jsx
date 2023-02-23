@@ -1,5 +1,8 @@
 import * as React from "react";
 import PropTypes from "prop-types";
+import Image from "next/image";
+import TypeIcon from "../components/Icons/TypeIcon";
+
 import Box from "@mui/material/Box";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -10,15 +13,11 @@ import TableRow from "@mui/material/TableRow";
 import TableSortLabel from "@mui/material/TableSortLabel";
 import Paper from "@mui/material/Paper";
 import { visuallyHidden } from "@mui/utils";
-import Image from "next/image";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 
-import pokedex from "../src/pokedex";
-import TypeIcon from "../components/Icons/TypeIcon";
-
-const Pokedex = () => {
+const PokemonTable = ({pokedex}) => {
   function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
       return -1;
@@ -56,9 +55,7 @@ const Pokedex = () => {
     return (
       <TableHead>
         <TableRow>
-          <TableCell
-            sortDirection={orderBy === "pokedexEntry" ? order : false}
-          >
+          <TableCell sortDirection={orderBy === "pokedexEntry" ? order : false}>
             <TableSortLabel
               active={orderBy === "pokedexEntry"}
               direction={orderBy === "pokedexEntry" ? order : "asc"}
@@ -73,10 +70,10 @@ const Pokedex = () => {
               ) : null}
             </TableSortLabel>
           </TableCell>
-          <TableCell align="center" padding="none">Sprite</TableCell>
-          <TableCell align="left" >
-            Nom
+          <TableCell align="center" padding="none">
+            Sprite
           </TableCell>
+          <TableCell align="left">Nom</TableCell>
           <TableCell align="center" padding="none">
             Types
           </TableCell>
@@ -278,25 +275,20 @@ const Pokedex = () => {
                           <List dense>
                             {pokemon.abilities.map((ability, index) => (
                               <ListItem key={ability + index}>
-                                <ListItemText primary={ability} align="center"/>
+                                <ListItemText
+                                  primary={ability}
+                                  align="center"
+                                />
                               </ListItem>
                             ))}
                           </List>
                         </TableCell>
-                        <TableCell>{pokemon.stats.hp}</TableCell>
-                        <TableCell>{pokemon.stats.attack}</TableCell>
-                        <TableCell>
-                          {pokemon.stats.defense}
-                        </TableCell>
-                        <TableCell>
-                          {pokemon.stats.specialAttack}
-                        </TableCell>
-                        <TableCell>
-                          {pokemon.stats.specialDefense}
-                        </TableCell>
-                        <TableCell>
-                          {pokemon.stats.speed}
-                        </TableCell>{" "}
+                        <TableCell>{pokemon.hp}</TableCell>
+                        <TableCell>{pokemon.attack}</TableCell>
+                        <TableCell>{pokemon.defense}</TableCell>
+                        <TableCell>{pokemon.specialAttack}</TableCell>
+                        <TableCell>{pokemon.specialDefense}</TableCell>
+                        <TableCell>{pokemon.speed}</TableCell>
                       </TableRow>
                     );
                   }
@@ -315,4 +307,4 @@ const Pokedex = () => {
   );
 };
 
-export default Pokedex;
+export default PokemonTable;
