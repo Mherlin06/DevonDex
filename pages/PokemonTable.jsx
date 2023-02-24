@@ -17,7 +17,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 
-const PokemonTable = ({pokedex}) => {
+const PokemonTable = ({ pokemonData }) => {
   function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
       return -1;
@@ -73,7 +73,9 @@ const PokemonTable = ({pokedex}) => {
           <TableCell align="center" padding="none">
             Sprite
           </TableCell>
-          <TableCell align="left">Nom</TableCell>
+          <TableCell align="center" padding="none">
+            Nom
+          </TableCell>
           <TableCell align="center" padding="none">
             Types
           </TableCell>
@@ -218,7 +220,7 @@ const PokemonTable = ({pokedex}) => {
                 onRequestSort={handleRequestSort}
               />
               <TableBody>
-                {stableSort(pokedex, getComparator(order, orderBy)).map(
+                {stableSort(pokemonData, getComparator(order, orderBy)).map(
                   (pokemon, index) => {
                     return (
                       <TableRow
@@ -229,14 +231,10 @@ const PokemonTable = ({pokedex}) => {
                         }}
                         padding="none"
                       >
-                        <TableCell
-                          component="th"
-                          scope="pokemon"
-                          align="center"
-                        >
+                        <TableCell component="th" scope="pokemon">
                           {pokemon.pokedexEntry}
                         </TableCell>
-                        <TableCell align="center">
+                        <TableCell align="center" padding="none">
                           {pokemon.miniSprite ? (
                             <Image
                               src={pokemon.miniSprite}
@@ -253,12 +251,14 @@ const PokemonTable = ({pokedex}) => {
                             />
                           )}
                         </TableCell>
-                        <TableCell>
+                        <TableCell padding="none">
                           <List>
-                            <ListItem alignItems="center">
+                            <ListItem>
                               <ListItemText
                                 primary={pokemon.frenchName}
                                 secondary={pokemon.name}
+                                align="center"
+                                padding="none"
                               />
                             </ListItem>
                           </List>
@@ -283,12 +283,16 @@ const PokemonTable = ({pokedex}) => {
                             ))}
                           </List>
                         </TableCell>
-                        <TableCell>{pokemon.hp}</TableCell>
-                        <TableCell>{pokemon.attack}</TableCell>
-                        <TableCell>{pokemon.defense}</TableCell>
-                        <TableCell>{pokemon.specialAttack}</TableCell>
-                        <TableCell>{pokemon.specialDefense}</TableCell>
-                        <TableCell>{pokemon.speed}</TableCell>
+                        <TableCell padding="none">{pokemon.hp}</TableCell>
+                        <TableCell padding="none">{pokemon.attack}</TableCell>
+                        <TableCell padding="none">{pokemon.defense}</TableCell>
+                        <TableCell padding="none">
+                          {pokemon.specialAttack}
+                        </TableCell>
+                        <TableCell padding="none">
+                          {pokemon.specialDefense}
+                        </TableCell>
+                        <TableCell padding="none">{pokemon.speed}</TableCell>
                       </TableRow>
                     );
                   }

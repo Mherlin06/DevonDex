@@ -7,7 +7,7 @@ export default function Index() {
   return (
     <Layout>
       <h1>Retrouvez tous les outils essentiels pour la stratégie Pokemon</h1>
-      <PokemonTable data={pokedex}/>
+      <PokemonTable pokemonData={pokedex}/>
     </Layout>
   );
 }

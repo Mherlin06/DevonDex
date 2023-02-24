@@ -8,7 +8,6 @@ const getPokemonList = async () => {
     return response.results;
   } catch (error) {
     console.log("There was an ERROR during getPokemonList: ", error);
-    throw error; // re-throw the error so that the calling code can handle it
   }
 };
 
@@ -18,7 +17,6 @@ const getPokemonData = async (pokemon) => {
     return response;
   } catch (error) {
     console.log("There was an ERROR during getPokemonData: ", error);
-    throw error; // re-throw the error so that the calling code can handle it
   }
 };
 
@@ -29,7 +27,6 @@ const getPokedexEntry = async (data) => {
     return entry;
   } catch (error) {
     console.log("There was an ERROR during getPokedexEntry: ", error);
-    throw error; // re-throw the error so that the calling code can handle it
   }
 };
 
@@ -39,7 +36,6 @@ const getPokemonFrenchName = async (data) => {
     return response.data.names.find((name) => name.language.name === "fr").name;
   } catch (error) {
     console.log("There was an ERROR during getPokemonFrenchName: ", error);
-    throw error; // re-throw the error so that the calling code can handle it
   }
 };
 
@@ -81,7 +77,6 @@ const buildPokemon = async (pokemon) => {
     return finalPokemon;
   } catch (error) {
     console.log("There was an ERROR during buildPokemon: ", error);
-    throw error; // re-throw the error so that the calling code can handle it
   }
 };
 
@@ -91,11 +86,9 @@ const buildPokedex = async () => {
     const pokedex = await Promise.all(
       pokemonList.map((pokemon) => buildPokemon(pokemon))
     );
-    console.log(pokedex);
     return pokedex;
   } catch (error) {
     console.log("There was an ERROR during buildPokedex: ", error);
-    throw error; // re-throw the error so that the calling code can handle it
   }
 };
 
