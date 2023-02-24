@@ -17,6 +17,8 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 
+import { getFrenchAbilityName } from "../src/pokemonData";
+
 const PokemonTable = ({ pokemonData }) => {
   function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
@@ -273,14 +275,17 @@ const PokemonTable = ({ pokemonData }) => {
                         </TableCell>
                         <TableCell>
                           <List dense>
-                            {pokemon.abilities.map((ability, index) => (
-                              <ListItem key={ability + index}>
-                                <ListItemText
-                                  primary={ability}
-                                  align="center"
-                                />
-                              </ListItem>
-                            ))}
+                            {pokemon.abilities.map((ability, index) => {
+                              let frenchAbility = getFrenchAbilityName(ability);
+                              return (
+                                <ListItem key={ability + index}>
+                                  <ListItemText
+                                    primary={frenchAbility}
+                                    align="center"
+                                  />
+                                </ListItem>
+                              );
+                            })}
                           </List>
                         </TableCell>
                         <TableCell padding="none">{pokemon.hp}</TableCell>

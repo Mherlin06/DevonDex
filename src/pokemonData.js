@@ -22992,4 +22992,1508 @@ const pokedex = [
   },
 ];
 
-export default pokedex;
+const abilities = [
+  {
+    name: "stench",
+    id: 1,
+    frenchName: "Puanteur",
+  },
+  {
+    name: "drizzle",
+    id: 2,
+    frenchName: "Crachin",
+  },
+  {
+    name: "speed-boost",
+    id: 3,
+    frenchName: "Turbo",
+  },
+  {
+    name: "battle-armor",
+    id: 4,
+    frenchName: "Armurbaston",
+  },
+  {
+    name: "sturdy",
+    id: 5,
+    frenchName: "Fermeté",
+  },
+  {
+    name: "damp",
+    id: 6,
+    frenchName: "Moiteur",
+  },
+  {
+    name: "limber",
+    id: 7,
+    frenchName: "Échauffement",
+  },
+  {
+    name: "sand-veil",
+    id: 8,
+    frenchName: "Voile Sable",
+  },
+  {
+    name: "static",
+    id: 9,
+    frenchName: "Statik",
+  },
+  {
+    name: "volt-absorb",
+    id: 10,
+    frenchName: "Absorbe-Volt",
+  },
+  {
+    name: "water-absorb",
+    id: 11,
+    frenchName: "Absorbe-Eau",
+  },
+  {
+    name: "oblivious",
+    id: 12,
+    frenchName: "Benêt",
+  },
+  {
+    name: "cloud-nine",
+    id: 13,
+    frenchName: "Ciel Gris",
+  },
+  {
+    name: "compound-eyes",
+    id: 14,
+    frenchName: "Œil Composé",
+  },
+  {
+    name: "insomnia",
+    id: 15,
+    frenchName: "Insomnia",
+  },
+  {
+    name: "color-change",
+    id: 16,
+    frenchName: "Homochromie",
+  },
+  {
+    name: "immunity",
+    id: 17,
+    frenchName: "Vaccin",
+  },
+  {
+    name: "flash-fire",
+    id: 18,
+    frenchName: "Torche",
+  },
+  {
+    name: "shield-dust",
+    id: 19,
+    frenchName: "Écran Poudre",
+  },
+  {
+    name: "own-tempo",
+    id: 20,
+    frenchName: "Tempo Perso",
+  },
+  {
+    name: "suction-cups",
+    id: 21,
+    frenchName: "Ventouse",
+  },
+  {
+    name: "intimidate",
+    id: 22,
+    frenchName: "Intimidation",
+  },
+  {
+    name: "shadow-tag",
+    id: 23,
+    frenchName: "Marque Ombre",
+  },
+  {
+    name: "rough-skin",
+    id: 24,
+    frenchName: "Peau Dure",
+  },
+  {
+    name: "wonder-guard",
+    id: 25,
+    frenchName: "Garde Mystik",
+  },
+  {
+    name: "levitate",
+    id: 26,
+    frenchName: "Lévitation",
+  },
+  {
+    name: "effect-spore",
+    id: 27,
+    frenchName: "Pose Spore",
+  },
+  {
+    name: "synchronize",
+    id: 28,
+    frenchName: "Synchro",
+  },
+  {
+    name: "clear-body",
+    id: 29,
+    frenchName: "Corps Sain",
+  },
+  {
+    name: "natural-cure",
+    id: 30,
+    frenchName: "Médic Nature",
+  },
+  {
+    name: "lightning-rod",
+    id: 31,
+    frenchName: "Paratonnerre",
+  },
+  {
+    name: "serene-grace",
+    id: 32,
+    frenchName: "Sérénité",
+  },
+  {
+    name: "swift-swim",
+    id: 33,
+    frenchName: "Glissade",
+  },
+  {
+    name: "chlorophyll",
+    id: 34,
+    frenchName: "Chlorophylle",
+  },
+  {
+    name: "illuminate",
+    id: 35,
+    frenchName: "Lumiattirance",
+  },
+  {
+    name: "trace",
+    id: 36,
+    frenchName: "Calque",
+  },
+  {
+    name: "huge-power",
+    id: 37,
+    frenchName: "Coloforce",
+  },
+  {
+    name: "poison-point",
+    id: 38,
+    frenchName: "Point Poison",
+  },
+  {
+    name: "inner-focus",
+    id: 39,
+    frenchName: "Attention",
+  },
+  {
+    name: "magma-armor",
+    id: 40,
+    frenchName: "Armumagma",
+  },
+  {
+    name: "water-veil",
+    id: 41,
+    frenchName: "Ignifu-Voile",
+  },
+  {
+    name: "magnet-pull",
+    id: 42,
+    frenchName: "Magnépiège",
+  },
+  {
+    name: "soundproof",
+    id: 43,
+    frenchName: "Anti-Bruit",
+  },
+  {
+    name: "rain-dish",
+    id: 44,
+    frenchName: "Cuvette",
+  },
+  {
+    name: "sand-stream",
+    id: 45,
+    frenchName: "Sable Volant",
+  },
+  {
+    name: "pressure",
+    id: 46,
+    frenchName: "Pression",
+  },
+  {
+    name: "thick-fat",
+    id: 47,
+    frenchName: "Isograisse",
+  },
+  {
+    name: "early-bird",
+    id: 48,
+    frenchName: "Matinal",
+  },
+  {
+    name: "flame-body",
+    id: 49,
+    frenchName: "Corps Ardent",
+  },
+  {
+    name: "run-away",
+    id: 50,
+    frenchName: "Fuite",
+  },
+  {
+    name: "keen-eye",
+    id: 51,
+    frenchName: "Regard Vif",
+  },
+  {
+    name: "hyper-cutter",
+    id: 52,
+    frenchName: "Hyper Cutter",
+  },
+  {
+    name: "pickup",
+    id: 53,
+    frenchName: "Ramassage",
+  },
+  {
+    name: "truant",
+    id: 54,
+    frenchName: "Absentéisme",
+  },
+  {
+    name: "hustle",
+    id: 55,
+    frenchName: "Agitation",
+  },
+  {
+    name: "cute-charm",
+    id: 56,
+    frenchName: "Joli Sourire",
+  },
+  {
+    name: "plus",
+    id: 57,
+    frenchName: "Plus",
+  },
+  {
+    name: "minus",
+    id: 58,
+    frenchName: "Moins",
+  },
+  {
+    name: "forecast",
+    id: 59,
+    frenchName: "Météo",
+  },
+  {
+    name: "sticky-hold",
+    id: 60,
+    frenchName: "Glu",
+  },
+  {
+    name: "shed-skin",
+    id: 61,
+    frenchName: "Mue",
+  },
+  {
+    name: "guts",
+    id: 62,
+    frenchName: "Cran",
+  },
+  {
+    name: "marvel-scale",
+    id: 63,
+    frenchName: "Écaille Spéciale",
+  },
+  {
+    name: "liquid-ooze",
+    id: 64,
+    frenchName: "Suintement",
+  },
+  {
+    name: "overgrow",
+    id: 65,
+    frenchName: "Engrais",
+  },
+  {
+    name: "blaze",
+    id: 66,
+    frenchName: "Brasier",
+  },
+  {
+    name: "torrent",
+    id: 67,
+    frenchName: "Torrent",
+  },
+  {
+    name: "swarm",
+    id: 68,
+    frenchName: "Essaim",
+  },
+  {
+    name: "rock-head",
+    id: 69,
+    frenchName: "Tête de Roc",
+  },
+  {
+    name: "drought",
+    id: 70,
+    frenchName: "Sécheresse",
+  },
+  {
+    name: "arena-trap",
+    id: 71,
+    frenchName: "Piège Sable",
+  },
+  {
+    name: "vital-spirit",
+    id: 72,
+    frenchName: "Esprit Vital",
+  },
+  {
+    name: "white-smoke",
+    id: 73,
+    frenchName: "Écran Fumée",
+  },
+  {
+    name: "pure-power",
+    id: 74,
+    frenchName: "Force Pure",
+  },
+  {
+    name: "shell-armor",
+    id: 75,
+    frenchName: "Coque Armure",
+  },
+  {
+    name: "air-lock",
+    id: 76,
+    frenchName: "Air Lock",
+  },
+  {
+    name: "tangled-feet",
+    id: 77,
+    frenchName: "Pieds Confus",
+  },
+  {
+    name: "motor-drive",
+    id: 78,
+    frenchName: "Motorisé",
+  },
+  {
+    name: "rivalry",
+    id: 79,
+    frenchName: "Rivalité",
+  },
+  {
+    name: "steadfast",
+    id: 80,
+    frenchName: "Impassible",
+  },
+  {
+    name: "snow-cloak",
+    id: 81,
+    frenchName: "Rideau Neige",
+  },
+  {
+    name: "gluttony",
+    id: 82,
+    frenchName: "Gloutonnerie",
+  },
+  {
+    name: "anger-point",
+    id: 83,
+    frenchName: "Colérique",
+  },
+  {
+    name: "unburden",
+    id: 84,
+    frenchName: "Délestage",
+  },
+  {
+    name: "heatproof",
+    id: 85,
+    frenchName: "Ignifugé",
+  },
+  {
+    name: "simple",
+    id: 86,
+    frenchName: "Simple",
+  },
+  {
+    name: "dry-skin",
+    id: 87,
+    frenchName: "Peau Sèche",
+  },
+  {
+    name: "download",
+    id: 88,
+    frenchName: "Télécharge",
+  },
+  {
+    name: "iron-fist",
+    id: 89,
+    frenchName: "Poing de Fer",
+  },
+  {
+    name: "poison-heal",
+    id: 90,
+    frenchName: "Soin Poison",
+  },
+  {
+    name: "adaptability",
+    id: 91,
+    frenchName: "Adaptabilité",
+  },
+  {
+    name: "skill-link",
+    id: 92,
+    frenchName: "Multi-Coups",
+  },
+  {
+    name: "hydration",
+    id: 93,
+    frenchName: "Hydratation",
+  },
+  {
+    name: "solar-power",
+    id: 94,
+    frenchName: "Force Soleil",
+  },
+  {
+    name: "quick-feet",
+    id: 95,
+    frenchName: "Pied Véloce",
+  },
+  {
+    name: "normalize",
+    id: 96,
+    frenchName: "Normalise",
+  },
+  {
+    name: "sniper",
+    id: 97,
+    frenchName: "Sniper",
+  },
+  {
+    name: "magic-guard",
+    id: 98,
+    frenchName: "Garde Magik",
+  },
+  {
+    name: "no-guard",
+    id: 99,
+    frenchName: "Annule Garde",
+  },
+  {
+    name: "stall",
+    id: 100,
+    frenchName: "Frein",
+  },
+  {
+    name: "technician",
+    id: 101,
+    frenchName: "Technicien",
+  },
+  {
+    name: "leaf-guard",
+    id: 102,
+    frenchName: "Feuille Garde",
+  },
+  {
+    name: "klutz",
+    id: 103,
+    frenchName: "Maladresse",
+  },
+  {
+    name: "mold-breaker",
+    id: 104,
+    frenchName: "Brise Moule",
+  },
+  {
+    name: "super-luck",
+    id: 105,
+    frenchName: "Chanceux",
+  },
+  {
+    name: "aftermath",
+    id: 106,
+    frenchName: "Boom Final",
+  },
+  {
+    name: "anticipation",
+    id: 107,
+    frenchName: "Anticipation",
+  },
+  {
+    name: "forewarn",
+    id: 108,
+    frenchName: "Prédiction",
+  },
+  {
+    name: "unaware",
+    id: 109,
+    frenchName: "Inconscient",
+  },
+  {
+    name: "tinted-lens",
+    id: 110,
+    frenchName: "Lentiteintée",
+  },
+  {
+    name: "filter",
+    id: 111,
+    frenchName: "Filtre",
+  },
+  {
+    name: "slow-start",
+    id: 112,
+    frenchName: "Début Calme",
+  },
+  {
+    name: "scrappy",
+    id: 113,
+    frenchName: "Querelleur",
+  },
+  {
+    name: "storm-drain",
+    id: 114,
+    frenchName: "Lavabo",
+  },
+  {
+    name: "ice-body",
+    id: 115,
+    frenchName: "Corps Gel",
+  },
+  {
+    name: "solid-rock",
+    id: 116,
+    frenchName: "Solide Roc",
+  },
+  {
+    name: "snow-warning",
+    id: 117,
+    frenchName: "Alerte Neige",
+  },
+  {
+    name: "honey-gather",
+    id: 118,
+    frenchName: "Cherche Miel",
+  },
+  {
+    name: "frisk",
+    id: 119,
+    frenchName: "Fouille",
+  },
+  {
+    name: "reckless",
+    id: 120,
+    frenchName: "Téméraire",
+  },
+  {
+    name: "multitype",
+    id: 121,
+    frenchName: "Multi-Type",
+  },
+  {
+    name: "flower-gift",
+    id: 122,
+    frenchName: "Don Floral",
+  },
+  {
+    name: "bad-dreams",
+    id: 123,
+    frenchName: "Mauvais Rêve",
+  },
+  {
+    name: "pickpocket",
+    id: 124,
+    frenchName: "Pickpocket",
+  },
+  {
+    name: "sheer-force",
+    id: 125,
+    frenchName: "Sans Limite",
+  },
+  {
+    name: "contrary",
+    id: 126,
+    frenchName: "Contestation",
+  },
+  {
+    name: "unnerve",
+    id: 127,
+    frenchName: "Tension",
+  },
+  {
+    name: "defiant",
+    id: 128,
+    frenchName: "Acharné",
+  },
+  {
+    name: "defeatist",
+    id: 129,
+    frenchName: "Défaitiste",
+  },
+  {
+    name: "cursed-body",
+    id: 130,
+    frenchName: "Corps Maudit",
+  },
+  {
+    name: "healer",
+    id: 131,
+    frenchName: "Cœur Soin",
+  },
+  {
+    name: "friend-guard",
+    id: 132,
+    frenchName: "Garde-Ami",
+  },
+  {
+    name: "weak-armor",
+    id: 133,
+    frenchName: "Armurouillée",
+  },
+  {
+    name: "heavy-metal",
+    id: 134,
+    frenchName: "Heavy Metal",
+  },
+  {
+    name: "light-metal",
+    id: 135,
+    frenchName: "Light Metal",
+  },
+  {
+    name: "multiscale",
+    id: 136,
+    frenchName: "Multiécaille",
+  },
+  {
+    name: "toxic-boost",
+    id: 137,
+    frenchName: "Rage Poison",
+  },
+  {
+    name: "flare-boost",
+    id: 138,
+    frenchName: "Rage Brûlure",
+  },
+  {
+    name: "harvest",
+    id: 139,
+    frenchName: "Récolte",
+  },
+  {
+    name: "telepathy",
+    id: 140,
+    frenchName: "Télépathe",
+  },
+  {
+    name: "moody",
+    id: 141,
+    frenchName: "Lunatique",
+  },
+  {
+    name: "overcoat",
+    id: 142,
+    frenchName: "Envelocape",
+  },
+  {
+    name: "poison-touch",
+    id: 143,
+    frenchName: "Toxitouche",
+  },
+  {
+    name: "regenerator",
+    id: 144,
+    frenchName: "Régé-Force",
+  },
+  {
+    name: "big-pecks",
+    id: 145,
+    frenchName: "Cœur de Coq",
+  },
+  {
+    name: "sand-rush",
+    id: 146,
+    frenchName: "Baigne Sable",
+  },
+  {
+    name: "wonder-skin",
+    id: 147,
+    frenchName: "Peau Miracle",
+  },
+  {
+    name: "analytic",
+    id: 148,
+    frenchName: "Analyste",
+  },
+  {
+    name: "illusion",
+    id: 149,
+    frenchName: "Illusion",
+  },
+  {
+    name: "imposter",
+    id: 150,
+    frenchName: "Imposteur",
+  },
+  {
+    name: "infiltrator",
+    id: 151,
+    frenchName: "Infiltration",
+  },
+  {
+    name: "mummy",
+    id: 152,
+    frenchName: "Momie",
+  },
+  {
+    name: "moxie",
+    id: 153,
+    frenchName: "Impudence",
+  },
+  {
+    name: "justified",
+    id: 154,
+    frenchName: "Cœur Noble",
+  },
+  {
+    name: "rattled",
+    id: 155,
+    frenchName: "Phobique",
+  },
+  {
+    name: "magic-bounce",
+    id: 156,
+    frenchName: "Miroir Magik",
+  },
+  {
+    name: "sap-sipper",
+    id: 157,
+    frenchName: "Herbivore",
+  },
+  {
+    name: "prankster",
+    id: 158,
+    frenchName: "Farceur",
+  },
+  {
+    name: "sand-force",
+    id: 159,
+    frenchName: "Force Sable",
+  },
+  {
+    name: "iron-barbs",
+    id: 160,
+    frenchName: "Épine de Fer",
+  },
+  {
+    name: "zen-mode",
+    id: 161,
+    frenchName: "Mode Transe",
+  },
+  {
+    name: "victory-star",
+    id: 162,
+    frenchName: "Victorieux",
+  },
+  {
+    name: "turboblaze",
+    id: 163,
+    frenchName: "Turbo Brasier",
+  },
+  {
+    name: "teravolt",
+    id: 164,
+    frenchName: "Téra-Voltage",
+  },
+  {
+    name: "aroma-veil",
+    id: 165,
+    frenchName: "Aroma-Voile",
+  },
+  {
+    name: "flower-veil",
+    id: 166,
+    frenchName: "Flora-Voile",
+  },
+  {
+    name: "cheek-pouch",
+    id: 167,
+    frenchName: "Bajoues",
+  },
+  {
+    name: "protean",
+    id: 168,
+    frenchName: "Protéen",
+  },
+  {
+    name: "fur-coat",
+    id: 169,
+    frenchName: "Toison Épaisse",
+  },
+  {
+    name: "magician",
+    id: 170,
+    frenchName: "Magicien",
+  },
+  {
+    name: "bulletproof",
+    id: 171,
+    frenchName: "Pare-Balles",
+  },
+  {
+    name: "competitive",
+    id: 172,
+    frenchName: "Battant",
+  },
+  {
+    name: "strong-jaw",
+    id: 173,
+    frenchName: "Prognathe",
+  },
+  {
+    name: "refrigerate",
+    id: 174,
+    frenchName: "Peau Gelée",
+  },
+  {
+    name: "sweet-veil",
+    id: 175,
+    frenchName: "Gluco-Voile",
+  },
+  {
+    name: "stance-change",
+    id: 176,
+    frenchName: "Déclic Tactique",
+  },
+  {
+    name: "gale-wings",
+    id: 177,
+    frenchName: "Ailes Bourrasque",
+  },
+  {
+    name: "mega-launcher",
+    id: 178,
+    frenchName: "Méga Blaster",
+  },
+  {
+    name: "grass-pelt",
+    id: 179,
+    frenchName: "Toison Herbue",
+  },
+  {
+    name: "symbiosis",
+    id: 180,
+    frenchName: "Symbiose",
+  },
+  {
+    name: "tough-claws",
+    id: 181,
+    frenchName: "Griffe Dure",
+  },
+  {
+    name: "pixilate",
+    id: 182,
+    frenchName: "Peau Féérique",
+  },
+  {
+    name: "gooey",
+    id: 183,
+    frenchName: "Poisseux",
+  },
+  {
+    name: "aerilate",
+    id: 184,
+    frenchName: "Peau Céleste",
+  },
+  {
+    name: "parental-bond",
+    id: 185,
+    frenchName: "Amour Filial",
+  },
+  {
+    name: "dark-aura",
+    id: 186,
+    frenchName: "Aura Ténébreuse",
+  },
+  {
+    name: "fairy-aura",
+    id: 187,
+    frenchName: "Aura Féérique",
+  },
+  {
+    name: "aura-break",
+    id: 188,
+    frenchName: "Aura Inversée",
+  },
+  {
+    name: "primordial-sea",
+    id: 189,
+    frenchName: "Mer Primaire",
+  },
+  {
+    name: "desolate-land",
+    id: 190,
+    frenchName: "Terre Finale",
+  },
+  {
+    name: "delta-stream",
+    id: 191,
+    frenchName: "Souffle Delta",
+  },
+  {
+    name: "stamina",
+    id: 192,
+    frenchName: "Endurance",
+  },
+  {
+    name: "wimp-out",
+    id: 193,
+    frenchName: "Escampette",
+  },
+  {
+    name: "emergency-exit",
+    id: 194,
+    frenchName: "Repli Tactique",
+  },
+  {
+    name: "water-compaction",
+    id: 195,
+    frenchName: "Sable Humide",
+  },
+  {
+    name: "merciless",
+    id: 196,
+    frenchName: "Cruauté",
+  },
+  {
+    name: "shields-down",
+    id: 197,
+    frenchName: "Bouclier-Carcan",
+  },
+  {
+    name: "stakeout",
+    id: 198,
+    frenchName: "Filature",
+  },
+  {
+    name: "water-bubble",
+    id: 199,
+    frenchName: "Aquabulle",
+  },
+  {
+    name: "steelworker",
+    id: 200,
+    frenchName: "Expert Acier",
+  },
+  {
+    name: "berserk",
+    id: 201,
+    frenchName: "Dracolère",
+  },
+  {
+    name: "slush-rush",
+    id: 202,
+    frenchName: "Chasse-Neige",
+  },
+  {
+    name: "long-reach",
+    id: 203,
+    frenchName: "Longue Portée",
+  },
+  {
+    name: "liquid-voice",
+    id: 204,
+    frenchName: "Hydrata-Son",
+  },
+  {
+    name: "triage",
+    id: 205,
+    frenchName: "Prioguérison",
+  },
+  {
+    name: "galvanize",
+    id: 206,
+    frenchName: "Peau Électrique",
+  },
+  {
+    name: "surge-surfer",
+    id: 207,
+    frenchName: "Surf Caudal",
+  },
+  {
+    name: "schooling",
+    id: 208,
+    frenchName: "Banc",
+  },
+  {
+    name: "disguise",
+    id: 209,
+    frenchName: "Fantômasque",
+  },
+  {
+    name: "battle-bond",
+    id: 210,
+    frenchName: "Synergie",
+  },
+  {
+    name: "power-construct",
+    id: 211,
+    frenchName: "Rassemblement",
+  },
+  {
+    name: "corrosion",
+    id: 212,
+    frenchName: "Corrosion",
+  },
+  {
+    name: "comatose",
+    id: 213,
+    frenchName: "Hypersommeil",
+  },
+  {
+    name: "queenly-majesty",
+    id: 214,
+    frenchName: "Prestance Royale",
+  },
+  {
+    name: "innards-out",
+    id: 215,
+    frenchName: "Expuls’Organes",
+  },
+  {
+    name: "dancer",
+    id: 216,
+    frenchName: "Danseuse",
+  },
+  {
+    name: "battery",
+    id: 217,
+    frenchName: "Batterie",
+  },
+  {
+    name: "fluffy",
+    id: 218,
+    frenchName: "Boule de Poils",
+  },
+  {
+    name: "dazzling",
+    id: 219,
+    frenchName: "Corps Coloré",
+  },
+  {
+    name: "soul-heart",
+    id: 220,
+    frenchName: "Animacœur",
+  },
+  {
+    name: "tangling-hair",
+    id: 221,
+    frenchName: "Mèche Rebelle",
+  },
+  {
+    name: "receiver",
+    id: 222,
+    frenchName: "Receveur",
+  },
+  {
+    name: "power-of-alchemy",
+    id: 223,
+    frenchName: "Osmose",
+  },
+  {
+    name: "beast-boost",
+    id: 224,
+    frenchName: "Boost Chimère",
+  },
+  {
+    name: "rks-system",
+    id: 225,
+    frenchName: "Système Alpha",
+  },
+  {
+    name: "electric-surge",
+    id: 226,
+    frenchName: "Créa-Élec",
+  },
+  {
+    name: "psychic-surge",
+    id: 227,
+    frenchName: "Créa-Psy",
+  },
+  {
+    name: "misty-surge",
+    id: 228,
+    frenchName: "Créa-Brume",
+  },
+  {
+    name: "grassy-surge",
+    id: 229,
+    frenchName: "Créa-Herbe",
+  },
+  {
+    name: "full-metal-body",
+    id: 230,
+    frenchName: "Métallo-Garde",
+  },
+  {
+    name: "shadow-shield",
+    id: 231,
+    frenchName: "Spectro-Bouclier",
+  },
+  {
+    name: "prism-armor",
+    id: 232,
+    frenchName: "Prisme-Armure",
+  },
+  {
+    name: "neuroforce",
+    id: 233,
+    frenchName: "Cérébro-Force",
+  },
+  {
+    name: "intrepid-sword",
+    id: 234,
+    frenchName: "Lame Indomptable",
+  },
+  {
+    name: "dauntless-shield",
+    id: 235,
+    frenchName: "Égide Inflexible",
+  },
+  {
+    name: "libero",
+    id: 236,
+    frenchName: "Libéro",
+  },
+  {
+    name: "ball-fetch",
+    id: 237,
+    frenchName: "Ramasse Ball",
+  },
+  {
+    name: "cotton-down",
+    id: 238,
+    frenchName: "Effilochage",
+  },
+  {
+    name: "propeller-tail",
+    id: 239,
+    frenchName: "Propulseur",
+  },
+  {
+    name: "mirror-armor",
+    id: 240,
+    frenchName: "Armure Miroir",
+  },
+  {
+    name: "gulp-missile",
+    id: 241,
+    frenchName: "Dégobage",
+  },
+  {
+    name: "stalwart",
+    id: 242,
+    frenchName: "Nerfs d’Acier",
+  },
+  {
+    name: "steam-engine",
+    id: 243,
+    frenchName: "Turbine",
+  },
+  {
+    name: "punk-rock",
+    id: 244,
+    frenchName: "Punk Rock",
+  },
+  {
+    name: "sand-spit",
+    id: 245,
+    frenchName: "Expul’Sable",
+  },
+  {
+    name: "ice-scales",
+    id: 246,
+    frenchName: "Écailles Glacées",
+  },
+  {
+    name: "ripen",
+    id: 247,
+    frenchName: "Mûrissement",
+  },
+  {
+    name: "ice-face",
+    id: 248,
+    frenchName: "Tête de Gel",
+  },
+  {
+    name: "power-spot",
+    id: 249,
+    frenchName: "Cercle d’Énergie",
+  },
+  {
+    name: "mimicry",
+    id: 250,
+    frenchName: "Mimétisme",
+  },
+  {
+    name: "screen-cleaner",
+    id: 251,
+    frenchName: "Brise-Barrière",
+  },
+  {
+    name: "steely-spirit",
+    id: 252,
+    frenchName: "Boost Acier",
+  },
+  {
+    name: "perish-body",
+    id: 253,
+    frenchName: "Corps Condamné",
+  },
+  {
+    name: "wandering-spirit",
+    id: 254,
+    frenchName: "Âme Vagabonde",
+  },
+  {
+    name: "gorilla-tactics",
+    id: 255,
+    frenchName: "Entêtement",
+  },
+  {
+    name: "neutralizing-gas",
+    id: 256,
+    frenchName: "Gaz Inhibiteur",
+  },
+  {
+    name: "pastel-veil",
+    id: 257,
+    frenchName: "Voile Pastel",
+  },
+  {
+    name: "hunger-switch",
+    id: 258,
+    frenchName: "Déclic Fringale",
+  },
+  {
+    name: "quick-draw",
+    id: 259,
+    frenchName: "Tir Vif",
+  },
+  {
+    name: "unseen-fist",
+    id: 260,
+    frenchName: "Poing Invisible",
+  },
+  {
+    name: "curious-medicine",
+    id: 261,
+    frenchName: "Breuvage Suspect",
+  },
+  {
+    name: "transistor",
+    id: 262,
+    frenchName: "Transistor",
+  },
+  {
+    name: "dragons-maw",
+    id: 263,
+    frenchName: "Dent de Dragon",
+  },
+  {
+    name: "chilling-neigh",
+    id: 264,
+    frenchName: "Blanche Ruade",
+  },
+  {
+    name: "grim-neigh",
+    id: 265,
+    frenchName: "Sombre Ruade",
+  },
+  {
+    name: "as-one-glastrier",
+    id: 266,
+    frenchName: "Osmose Équine",
+  },
+  {
+    name: "as-one-spectrier",
+    id: 267,
+    frenchName: "Osmose Équine",
+  },
+  {
+    name: "lingering-aroma",
+    id: 268,
+    frenchName: "Odeur Tenace",
+  },
+  {
+    name: "seed-sower",
+    id: 269,
+    frenchName: "Semencier",
+  },
+  {
+    name: "thermal-exchange",
+    id: 270,
+    frenchName: "Thermodynamique",
+  },
+  {
+    name: "anger-shell",
+    id: 271,
+    frenchName: "Courroupace",
+  },
+  {
+    name: "purifying-salt",
+    id: 272,
+    frenchName: "Sel Purificateur",
+  },
+  {
+    name: "well-baked-body",
+    id: 273,
+    frenchName: "Bien Cuit",
+  },
+  {
+    name: "wind-rider",
+    id: 274,
+    frenchName: "Aéroporté",
+  },
+  {
+    name: "guard-dog",
+    id: 275,
+    frenchName: "Chien de Garde",
+  },
+  {
+    name: "rocky-payload",
+    id: 276,
+    frenchName: "Porte-Roche",
+  },
+  {
+    name: "wind-power",
+    id: 277,
+    frenchName: "Turbine Éolienne",
+  },
+  {
+    name: "zero-to-hero",
+    id: 278,
+    frenchName: "Supermutation",
+  },
+  {
+    name: "commander",
+    id: 279,
+    frenchName: "Commandant",
+  },
+  {
+    name: "electromorphosis",
+    id: 280,
+    frenchName: "Grecharge",
+  },
+  {
+    name: "protosynthesis",
+    id: 281,
+    frenchName: "Paléosynthèse",
+  },
+  {
+    name: "quark-drive",
+    id: 282,
+    frenchName: "Charge Quantique",
+  },
+  {
+    name: "good-as-gold",
+    id: 283,
+    frenchName: "Corps en Or",
+  },
+  {
+    name: "vessel-of-ruin",
+    id: 284,
+    frenchName: "Urne du Fléau",
+  },
+  {
+    name: "sword-of-ruin",
+    id: 285,
+    frenchName: "Épée du Fléau",
+  },
+  {
+    name: "tablets-of-ruin",
+    id: 286,
+    frenchName: "Bois du Fléau",
+  },
+  {
+    name: "beads-of-ruin",
+    id: 287,
+    frenchName: "Perles du Fléau",
+  },
+  {
+    name: "orichalcum-pulse",
+    id: 288,
+    frenchName: "Pouls Orichalque",
+  },
+  {
+    name: "hadron-engine",
+    id: 289,
+    frenchName: "Moteur à Hadrons",
+  },
+  {
+    name: "opportunist",
+    id: 290,
+    frenchName: "Opportuniste",
+  },
+  {
+    name: "cud-chew",
+    id: 291,
+    frenchName: "Ruminant",
+  },
+  {
+    name: "sharpness",
+    id: 292,
+    frenchName: "Incisif",
+  },
+  {
+    name: "supreme-overlord",
+    id: 293,
+    frenchName: "Général Suprême",
+  },
+  {
+    name: "costar",
+    id: 294,
+    frenchName: "Collab",
+  },
+  {
+    name: "toxic-debris",
+    id: 295,
+    frenchName: "Dépôt Toxique",
+  },
+  {
+    name: "armor-tail",
+    id: 296,
+    frenchName: "Armure Caudale",
+  },
+  {
+    name: "earth-eater",
+    id: 297,
+    frenchName: "Absorbe-Terre",
+  },
+  {
+    name: "mycelium-might",
+    id: 298,
+    frenchName: "Force Fongique",
+  }
+];
+
+const getFrenchAbilityName = (abilityName) => {
+  const ability = abilities.find((ability) => ability.name === abilityName);
+  return ability.frenchName;
+};
+
+const getPokedex = () => {
+  return pokedex;
+};
+
+export {getFrenchAbilityName, getPokedex};
+
+
