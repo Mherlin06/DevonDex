@@ -1,8 +1,8 @@
 import * as React from "react";
 import PropTypes from "prop-types";
 import Image from "next/image";
-import TypeIcon from "../components/Icons/TypeIcon";
 
+// Material UI
 import Box from "@mui/material/Box";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -16,9 +16,13 @@ import { visuallyHidden } from "@mui/utils";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
+import Link from "@mui/material/Link";
 
+// Data
 import { getFrenchAbilityName } from "../src/pokemonData";
+import TypeIcon from "./Icons/TypeIcon";
 
+// Table
 const PokemonTable = ({ pokemonData }) => {
   function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
@@ -48,6 +52,7 @@ const PokemonTable = ({ pokemonData }) => {
     return stabilizedThis.map((el) => el[0]);
   }
 
+  // Table Header
   function EnhancedTableHead(props) {
     const { order, orderBy, onRequestSort } = props;
     const createSortHandler = (property) => (event) => {
@@ -197,6 +202,7 @@ const PokemonTable = ({ pokemonData }) => {
     orderBy: PropTypes.string.isRequired,
   };
 
+  // Table Body
   function EnhancedTable() {
     const [order, setOrder] = React.useState("asc");
     const [orderBy, setOrderBy] = React.useState("pokedexEntry");
@@ -278,12 +284,21 @@ const PokemonTable = ({ pokemonData }) => {
                             {pokemon.abilities.map((ability, index) => {
                               let frenchAbility = getFrenchAbilityName(ability);
                               return (
-                                <ListItem key={ability + index}>
-                                  <ListItemText
-                                    primary={frenchAbility}
-                                    align="center"
-                                  />
-                                </ListItem>
+                                <Link
+                                  href={`/talent/${frenchAbility}`}
+                                  key={ability + index}
+                                  underline="hover"
+                                  variant="inherit"
+                                  color="inherit"
+                                >
+                                  <ListItem>
+                                    <ListItemText
+                                      primary={frenchAbility}
+                                      align="center"
+                                      padding="none"
+                                    />
+                                  </ListItem>
+                                </Link>
                               );
                             })}
                           </List>

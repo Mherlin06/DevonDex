@@ -1,11 +1,17 @@
 import * as React from "react";
 import Layout from "../components/Layout/Layout";
-import PokemonTable from "./PokemonTable";
+import PokemonTable from "../components/PokemonTable";
 import { getPokedex } from "../src/pokemonData";
 
-export default function Index() {
-  const pokedex = getPokedex();
-  
+export async function getStaticProps() {
+  return {
+    props: {
+      pokedex: getPokedex(),
+    },
+  };
+}
+
+export default function Index({pokedex}) {
   return (
     <Layout>
       <h1>Retrouvez tous les outils essentiels pour la stratégie Pokemon</h1>

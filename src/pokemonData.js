@@ -1,3 +1,6 @@
+import Pokedex from "pokedex-promise-v2";
+const P = new Pokedex();
+
 const pokedex = [
   {
     name: "bulbasaur",
@@ -24482,7 +24485,7 @@ const abilities = [
     name: "mycelium-might",
     id: 298,
     frenchName: "Force Fongique",
-  }
+  },
 ];
 
 const getFrenchAbilityName = (abilityName) => {
@@ -24490,10 +24493,31 @@ const getFrenchAbilityName = (abilityName) => {
   return ability.frenchName;
 };
 
+const getAllAbilitiesIds = () => {
+  return abilities.map((ability) => {
+    return {
+      params: {
+        id: ability.frenchName,
+      },
+    };
+  });
+};
+
+const getAbilityData = (id) => {
+  const abilityName = abilities.find(
+    (ability) => ability.frenchName === id
+  ).name;
+  const abilityData = P.getAbilityByName(abilityName)
+    .then((response) => response.results)
+    .catch((error) => console.log(error));
+  return {
+    id,
+    ...abilityData
+  }
+};
+
 const getPokedex = () => {
   return pokedex;
 };
 
-export {getFrenchAbilityName, getPokedex};
-
-
+export { getFrenchAbilityName, getPokedex, getAllAbilitiesIds, getAbilityData };
